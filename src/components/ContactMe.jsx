@@ -26,7 +26,7 @@ const ContactMe = () => {
       [name]: value
     }))
     
-    // Limpar erro quando o usuário começar a digitar
+    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -44,24 +44,24 @@ const ContactMe = () => {
 
     let isValid = true
 
-    // Validar nome
+    // Validate name
     if (!formData.name.trim()) {
-      newErrors.name = 'Nome é obrigatório'
+      newErrors.name = 'Name is required'
       isValid = false
     }
 
-    // Validar email
+    // Validate email
     if (!formData.email.trim()) {
-      newErrors.email = 'Email é obrigatório'
+      newErrors.email = 'Email is required'
       isValid = false
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'Email inválido'
+      newErrors.email = 'Invalid email'
       isValid = false
     }
 
-    // Validar mensagem
+    // Validate message
     if (!formData.message.trim()) {
-      newErrors.message = 'Mensagem é obrigatória'
+      newErrors.message = 'Message is required'
       isValid = false
     }
 
@@ -73,11 +73,11 @@ const ContactMe = () => {
     e.preventDefault()
     
     if (validateForm()) {
-      // Aqui você pode adicionar a lógica para enviar o formulário
-      console.log('Formulário enviado:', formData)
-      alert('Mensagem enviada com sucesso!')
+      // Here you can add the logic to send the form
+      console.log('Form submitted:', formData)
+      alert('Message sent successfully!')
       
-      // Limpar formulário
+      // Clear form
       setFormData({
         name: '',
         email: '',
@@ -89,10 +89,10 @@ const ContactMe = () => {
   return (
     <section id="contact" className="contact-me">
       <div className="contact-container">
-        <h2 className="section-title">Entre em Contato</h2>
+        <h2 className="section-title">Contact Me</h2>
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Nome *</label>
+            <label htmlFor="name">Name *</label>
             <input
               type="text"
               id="name"
@@ -100,7 +100,7 @@ const ContactMe = () => {
               value={formData.name}
               onChange={handleChange}
               className={errors.name ? 'error' : ''}
-              placeholder="Seu nome completo"
+              placeholder="Your full name"
             />
             {errors.name && <span className="error-message">{errors.name}</span>}
           </div>
@@ -114,27 +114,27 @@ const ContactMe = () => {
               value={formData.email}
               onChange={handleChange}
               className={errors.email ? 'error' : ''}
-              placeholder="seu@email.com"
+              placeholder="your@email.com"
             />
             {errors.email && <span className="error-message">{errors.email}</span>}
           </div>
 
           <div className="form-group">
-            <label htmlFor="message">Mensagem *</label>
+            <label htmlFor="message">Message *</label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               className={errors.message ? 'error' : ''}
-              placeholder="Sua mensagem aqui..."
+              placeholder="Your message here..."
               rows="6"
             />
             {errors.message && <span className="error-message">{errors.message}</span>}
           </div>
 
           <button type="submit" className="submit-button">
-            Enviar Mensagem
+            Send Message
           </button>
         </form>
       </div>
