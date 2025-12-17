@@ -12,20 +12,10 @@ const LandingSection = () => {
             className="avatar"
           />
         </div>
-        <h1 className="name">Leonardo Martins</h1>
+        <h1 className="greeting">Hello, I am Pete!</h1>
         <p className="bio">
-          Full Stack Developer passionate about creating innovative solutions and exceptional 
-          digital experiences. Specialized in React, JavaScript, TypeScript and modern technologies.
-          Mechatronics Engineering student at FIAP, focused on hardware, software and automation.
+          A frontend developer specialised in React
         </p>
-        <a 
-          href="https://www.leonardomartins.dev/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="portfolio-link"
-        >
-          Visit My Official Portfolio →
-        </a>
       </div>
     </section>
   )

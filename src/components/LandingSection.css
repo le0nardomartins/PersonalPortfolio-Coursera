@@ -27,7 +27,7 @@
   object-fit: cover;
 }
 
-.name {
+.greeting {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -88,7 +88,7 @@
     height: 150px;
   }
 
-  .name {
+  .greeting {
     font-size: 2rem;
   }
 

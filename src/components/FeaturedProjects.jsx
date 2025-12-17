@@ -52,8 +52,8 @@ const FeaturedProjects = () => {
                 <p className="card-description">{project.description}</p>
                 {project.technologies && (
                   <div className="card-technologies">
-                    {project.technologies.map((tech, index) => (
-                      <span key={index} className="tech-tag">{tech}</span>
+                    {project.technologies.map((tech) => (
+                      <span key={`${project.id}-${tech}`} className="tech-tag">{tech}</span>
                     ))}
                   </div>
                 )}
@@ -64,7 +64,7 @@ const FeaturedProjects = () => {
                     rel="noopener noreferrer"
                     className="card-link"
                   >
-                    View Project →
+                    See more →
                   </a>
                 )}
               </div>
